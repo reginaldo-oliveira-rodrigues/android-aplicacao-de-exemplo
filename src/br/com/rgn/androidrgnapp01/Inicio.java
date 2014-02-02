@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
 public class Inicio extends Activity {
-	public final static String TEXTO_DIGITADO = "texto_digitado_pelo_usuario";
+	public final static String TEXTO_VINDO_DA_TELA_INICIO = "texto_vindo_da_tela_inicio";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +20,10 @@ public class Inicio extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.inicio, menu);
-		return true;
+		// Exibe os items do menu para uso na barra de ações
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.inicio, menu);
+	    return super.onCreateOptionsMenu(menu);
 	}
 	
 	/**
@@ -31,7 +34,34 @@ public class Inicio extends Activity {
 		Intent intencao = new Intent(this, ExibicaoDeTextoDigitado.class);
 		EditText editText = (EditText) findViewById(R.id.textoDoUsuario);
 		String textoDigitado = editText.getText().toString();
-		intencao.putExtra(TEXTO_DIGITADO, textoDigitado);
+		intencao.putExtra(TEXTO_VINDO_DA_TELA_INICIO, textoDigitado);
+		startActivity(intencao);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Trata pressoes nos itens da barra de acao
+	    switch (item.getItemId()) {
+	        case R.id.AcaoDeBusca:
+	            openSearch();
+	            return true;
+	        case R.id.AcaoDeConfiguracoes:
+	            openSettings();
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
+
+	private void openSettings() {
+		Intent intencao = new Intent(this, ExibicaoDeTextoDigitado.class);
+		intencao.putExtra(TEXTO_VINDO_DA_TELA_INICIO, "Configurações está em Desenvolvimento");
+		startActivity(intencao);
+	}
+
+	private void openSearch() {
+		Intent intencao = new Intent(this, ExibicaoDeTextoDigitado.class);
+		intencao.putExtra(TEXTO_VINDO_DA_TELA_INICIO, "Busca está em Desenvolvimento");
 		startActivity(intencao);
 	}
 

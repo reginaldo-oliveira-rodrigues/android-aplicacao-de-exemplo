@@ -19,7 +19,7 @@ public class ExibicaoDeTextoDigitado extends Activity {
 		
 		// Get the message from the intent
 	    Intent intencao = getIntent();
-	    String textoDigitado = intencao.getStringExtra(Inicio.TEXTO_DIGITADO);
+	    String textoDigitado = intencao.getStringExtra(Inicio.TEXTO_VINDO_DA_TELA_INICIO);
 
 	    // Create the text view
 	    TextView texto = new TextView(this);

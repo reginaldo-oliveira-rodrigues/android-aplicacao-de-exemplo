@@ -1,15 +1,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <!-- Busca, deve aparecer como botão de ação -->
-    <item android:id="@+id/botao_de_busca"
+    <item android:id="@+id/AcaoDeBusca"
           android:icon="@drawable/ic_launcher"
           android:title="@string/acao_de_busca"
           android:showAsAction="ifRoom" />
     
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_settings"/>
+        android:id="@+id/AcaoDeConfiguracoes"
+        android:icon="@drawable/ic_launcher"
+        android:title="@string/action_settings"
+        android:showAsAction="ifRoom"/>
 
 </menu>
