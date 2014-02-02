@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Aplicação Android de Teste</string>
+    <string name="action_settings">Configurações</string>
+    <string name="mostrar">Mostrar</string>
+    <string name="dica_para_digitar">Digite aqui ...</string>
+    <string name="title_activity_exibicao_de_texto_digitado">Exibição de texto digitado</string>
+    <string name="acao_de_busca">Buscar</string>
+</resources>
