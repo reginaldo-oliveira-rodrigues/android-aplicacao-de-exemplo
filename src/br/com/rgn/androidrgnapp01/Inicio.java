@@ -10,12 +10,14 @@ import android.view.View;
 import android.widget.EditText;
 
 public class Inicio extends Activity {
+	
 	public final static String TEXTO_VINDO_DA_TELA_INICIO = "texto_vindo_da_tela_inicio";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_inicio);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 
 	@Override
